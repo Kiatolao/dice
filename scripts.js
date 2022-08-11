@@ -8,6 +8,8 @@ const audioVictory = new Audio('sounds/victory.wav');
 
 document.querySelector('.sound').addEventListener('click', function(){
     ifAllowSound = !ifAllowSound;
+    document.querySelector('.sound').classList.toggle('fa-volume-up');
+    document.querySelector('.sound').classList.toggle('fa-volume-xmark');
 })
 
 //Rules modal

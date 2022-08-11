@@ -22,10 +22,16 @@
     <!-- Player 1 -->
     <div class="active-player-0 col-sm-12 col-md-6 shadow-lg active">
         <div class="position-absolute">
-            <p class="new-game"><i class="fa fa-circle-plus fa-sm"></i> NEW GAME</p>     
+            <p class="new-game"><i class="text-danger fa fa-circle-plus fa-sm"></i> NEW GAME</p>     
+          <div>
+            <p class="quest"><i class="text-danger fa fa-circle-question fa-sm"></i></p>
+          </div>
+          <div>
+            <p class=""><i class="text-danger sound fa fa-volume-up fa-sm"></i></p>
+          </div>  
         </div>
         <div class="player-1-div p-4 text-center text-sm-right">
-            <h2 class="py-4"><i class="player-0 fa-solid fa-dice-d6 fa-sm fa-spin"></i> Player 1</h2>
+            <h2 class="py-4"><i class="text-danger player-0 fa-solid fa-dice-d6 fa-2xs fa-spin"></i> Player 1</h2>
             <div class="container">
                 <h2 class="text-danger pb-3 global-score-0">0</h2>
                 <div class="current-score mx-auto text-light shadow">
@@ -38,19 +44,15 @@
 
     <!-- Dice, Roll and Hold -->
     <div class="text-center position-absolute">
-        <button type="button" class="btn btn-roll"><i class="fa-solid fa-arrows-rotate fa-sm"></i> ROLL</button>
+        <button type="button" class="btn btn-roll"><i class="text-danger fa-solid fa-arrows-rotate fa-sm"></i> ROLL</button>
         <img class="dice float-left" src="images/dice-6.png" alt="rolling dice" width="75px">
-        <button class="btn btn-hold">HOLD <i class="fa-solid fa-arrow-right-to-bracket fa-sm"></i></button>
+        <button class="btn btn-hold">HOLD <i class=" text-danger fa-solid fa-arrow-right-to-bracket fa-sm"></i></button>
     </div>   
 
     <!-- Player 2 -->
-    <div class="active-player-1 col-sm-12 col-md-6">
-        <div class="position-absolute">
-            <i class="quest fa fa-circle-question"></i>
-            <i class="sound fa fa-volume-off"></i>    
-        </div>   
+    <div class="active-player-1 col-sm-12 col-md-6">  
         <div class="player-1-div p-4 text-center text-sm-right">
-            <h2 class="py-4">Player 2 <i class="player-1 fa-solid fa-dice-d6 fa-sm fa-spin"></i></h2>
+            <h2 class="py-4 ">Player 2 <i class="text-danger player-1 fa-solid fa-dice-d6 fa-2xs fa-spin"></i></h2>
             <div class="container">
                 <h2 class="text-danger pb-3 global-score-1">0</h2>
                 <div class="current-score mx-auto text-light shadow">
