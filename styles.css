@@ -17,7 +17,7 @@ html, body {
 }
 
 .player-1-div, .player-2-div {
-    height:19rem;
+    height:50vh;
 }
 
 .current-score {

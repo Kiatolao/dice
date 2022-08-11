@@ -69,7 +69,7 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
 
         document.querySelector(`.global-score-${activePlayer}`).textContent = scores[activePlayer];
         
-        if (scores[activePlayer] >= 1) {
+        if (scores[activePlayer] >= 100){
             playing = false;
             if(ifAllowSound){
                 audioVictory.play();
