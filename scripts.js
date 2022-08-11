@@ -1,10 +1,14 @@
 let scores, currentScore, activePlayer, playing;
+let ifAllowSound = true;
 const audioDice = new Audio('sounds/rolling-dice.wav');
 const audioHold = new Audio('sounds/hold.wav');
 const audioNew = new Audio('sounds/new-game.wav');
 const audioFail = new Audio('sounds/fail.mp3');
 const audioVictory = new Audio('sounds/victory.wav');
 
+document.querySelector('.sound').addEventListener('click', function(){
+    ifAllowSound = !ifAllowSound;
+})
 
 //Rules modal
 document.querySelector('.quest').addEventListener('click', function(){
@@ -18,7 +22,10 @@ init();
 // Button roll -- Dice random generator + dice png switch + current score (+=)
 document.querySelector('.btn-roll').addEventListener('click', function() {
     if(playing) {
-        audioDice.play();
+        if(ifAllowSound){
+            audioDice.play();
+        }
+
         document.querySelector('.dice').src="images/rolling-dice.gif"
 
         let locked = document.querySelector('.btn-roll');
@@ -35,7 +42,9 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
             currentScore += dice;
             document.querySelector(`.current-score-${activePlayer}`).textContent = currentScore;
         } else {
-            audioFail.play();
+            if(ifAllowSound){
+                audioFail.play();
+            }
             switchPlayer();
         }
 
@@ -50,14 +59,19 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
 // Button hold -- add current score to global +  add & check win condition
 document.querySelector('.btn-hold').addEventListener('click', function() {
     if (playing) {
-        audioHold.play();
+        if(ifAllowSound){
+            audioHold.play();
+        }
+
         scores[activePlayer] += currentScore;
 
         document.querySelector(`.global-score-${activePlayer}`).textContent = scores[activePlayer];
         
-        if (scores[activePlayer] >= 100) {
+        if (scores[activePlayer] >= 1) {
             playing = false;
-            audioVictory.play();
+            if(ifAllowSound){
+                audioVictory.play();
+            }
             
             //Modal winner
             $('#myModal').modal('show');
@@ -103,7 +117,9 @@ function switchPlayer() {
 
 // Reset function
 function init() {
-    audioNew.play();
+    if(ifAllowSound) {
+        audioNew.play();
+    }
     scores = [0, 0];
     activePlayer = 0;
     currentScore = 0;
