@@ -13,7 +13,7 @@ html, body {
 }
 
 .container-style {
-    background-image: url('images/diagmonds.png');
+    background-image: url('images/diamonds.png');
 }
 
 .player-1-div, .player-2-div {
@@ -35,24 +35,18 @@ html, body {
     outline: 1px black;
 }
 
-.backgound-player {
-    background-color: aliceblue;
-}
-
 .winner {
     font-family: 'Lato', sans-serif;
 }
 
 .landscape {
     visibility: hidden;
-
 }
 
 .content {
     position: absolute; 
     left: 0; 
     right: 0; 
-
     width: 300px; 
   }
 

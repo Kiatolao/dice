@@ -1,9 +1,10 @@
 let scores, currentScore, activePlayer, playing;
-const audioDice = new Audio('sounds/rolling-dice.wav')
-const audioHold = new Audio('sounds/hold.wav')
-const audioNew = new Audio('sounds/new-game.wav')
-const audioFail = new Audio('sounds/fail.mp3')
-const audioVictory = new Audio('sounds/victory.wav')
+const audioDice = new Audio('sounds/rolling-dice.wav');
+const audioHold = new Audio('sounds/hold.wav');
+const audioNew = new Audio('sounds/new-game.wav');
+const audioFail = new Audio('sounds/fail.mp3');
+const audioVictory = new Audio('sounds/victory.wav');
+
 
 //Rules modal
 document.querySelector('.quest').addEventListener('click', function(){
@@ -18,10 +19,12 @@ init();
 document.querySelector('.btn-roll').addEventListener('click', function() {
     if(playing) {
         audioDice.play();
-        document.querySelector('.dice').src= "images/rolling-dice.gif"
+        document.querySelector('.dice').src="images/rolling-dice.gif"
 
         let locked = document.querySelector('.btn-roll');
-        locked.disabled=true;
+        let locked2 = document.querySelector('.btn-hold');
+        locked.disabled = true;
+        locked2.disabled = true;
 
         const delay = 1000;
         setTimeout (function(){
@@ -36,9 +39,10 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
             switchPlayer();
         }
 
-        document.querySelector('.dice').src =(`images/dice-${dice}.png`)
+        document.querySelector('.dice').src =(`images/dice-${dice}.png`);
 
         locked.disabled = false;
+        locked2.disabled = false;
     }, delay);
 }    
 });
@@ -69,12 +73,12 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
             switchPlayer();
         }
 
-        locked = document.querySelector('.btn-hold')
+        locked = document.querySelector('.btn-hold');
         locked.disabled = true;
-        const delay = 500;
+        const delay = 750;
         setTimeout(function() {
             locked.disabled = false;
-        },delay)
+        },delay);
     }
 });
 
